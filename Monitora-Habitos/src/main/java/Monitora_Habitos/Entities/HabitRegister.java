@@ -36,7 +36,7 @@ public class HabitRegister {
     @JoinColumn(name = "habit_id")
     private Habit habit;
 
-    private LocalDate date;
+    private LocalDate date = LocalDate.now();
 
     @Enumerated(EnumType.STRING)
     private StatusHabit statusHabit;
