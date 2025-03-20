@@ -23,7 +23,6 @@ import lombok.Setter;
 @Table(name = "tb_habitRegister")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class HabitRegister {
@@ -36,8 +35,17 @@ public class HabitRegister {
     @JoinColumn(name = "habit_id")
     private Habit habit;
 
-    private LocalDate date = LocalDate.now();
+    private LocalDate date;
 
     @Enumerated(EnumType.STRING)
     private StatusHabit statusHabit;
+
+    public HabitRegister(UUID id, Habit habit, LocalDate date, StatusHabit statusHabit) {
+        this.id = id;
+        this.habit = habit;
+        this.date = date.now();
+        this.statusHabit = statusHabit;
+    }
+
+    
 }

@@ -25,9 +25,23 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public User findUserByName(String name){
+        public User findById(UUID id){
 
-        return userRepository.findUserByName(name).get();
+            if(!userRepository.existsById(id)){
+                throw new UserException("Usuário com ID " + id + " não encontrado.");
+            }
+
+            return userRepository.findById(id).get();
+
+        }
+
+
+    @Transactional(readOnly = true)
+    public Page<User> findUserByName(String name, Pageable pageable){
+
+        Page<User> result = userRepository.findUserByName(name, pageable);
+
+        return result;
     }
 
     @Transactional(readOnly = true)

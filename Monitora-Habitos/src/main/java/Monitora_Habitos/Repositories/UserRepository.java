@@ -1,8 +1,9 @@
 package Monitora_Habitos.Repositories;
 
-import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import Monitora_Habitos.Entities.User;
@@ -10,5 +11,5 @@ import Monitora_Habitos.Entities.User;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
     
-    Optional<User> findUserByName(String name);
+    Page<User> findUserByName(String name, Pageable pageable);
 }

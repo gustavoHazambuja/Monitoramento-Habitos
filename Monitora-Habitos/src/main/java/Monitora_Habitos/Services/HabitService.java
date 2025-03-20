@@ -26,9 +26,21 @@ public class HabitService {
     }
 
     @Transactional(readOnly = true)
-    public Habit findHabitByName(String name){
+    public Habit findById(UUID id){
+
+        if(!habitRepository.existsById(id)){
+            throw new HabitException("Hábito com id " + id + " não encontrado.");
+        }
+
+        return habitRepository.findById(id).get();
+    }
+
+    @Transactional(readOnly = true)
+    public Page<Habit> findHabitByName(String name, Pageable pageable){
         
-        return habitRepository.findHabitByName(name).get();
+        Page<Habit> result = habitRepository.findHabitByName(name, pageable);
+
+        return result;
     }
 
     @Transactional(readOnly = true)
