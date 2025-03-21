@@ -1,9 +1,9 @@
-# Monitoriamento de Hábitos
+# Monitoramento de Hábitos
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
 
 # Sobre o projeto
 
-Monitoriamento de Hábitos é uma aplicação backend. A aplicação consiste em um mini sistema de gerenciamento de hábitos, praticando a relação entre tabelas, usuários e hábitos.
+Monitoramento de Hábitos é uma aplicação backend. A aplicação consiste em um mini sistema de gerenciamento de hábitos, praticando a relação entre tabelas, usuários e hábitos.
 
 
 ## API
