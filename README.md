@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-Monitoriamento de Hábitos é uma aplicação backend. A aplicação consiste em um mini sistema de gerenciamento de hábitos, praticando a relação entre tabelas, usuarios e hábitos.
+Monitoriamento de Hábitos é uma aplicação backend. A aplicação consiste em um mini sistema de gerenciamento de hábitos, praticando a relação entre tabelas, usuários e hábitos.
 
 
 ## API
