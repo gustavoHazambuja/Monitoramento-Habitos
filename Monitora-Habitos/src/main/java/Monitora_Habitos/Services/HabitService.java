@@ -38,7 +38,7 @@ public class HabitService {
     @Transactional(readOnly = true)
     public Page<Habit> findHabitByName(String name, Pageable pageable){
         
-        Page<Habit> result = habitRepository.findHabitByName(name, pageable);
+        Page<Habit> result = habitRepository.findHabitByNameContainingIgnoreCase(name, pageable);
 
         return result;
     }
@@ -69,9 +69,14 @@ public class HabitService {
 
         Habit result = habitRepository.findById(id).get();
 
-        result.setName(habit.getName());
-        result.setFrequencyHabit(habit.getFrequencyHabit());
+        if(habit.getName() != null){
+            result.setName(habit.getName());
+        }
 
+        if(habit.getFrequencyHabit() != null){
+            result.setFrequencyHabit(habit.getFrequencyHabit());
+        }
+     
         return habitRepository.save(result);
     }
 }

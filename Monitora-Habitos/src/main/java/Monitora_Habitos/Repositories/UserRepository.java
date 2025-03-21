@@ -11,5 +11,5 @@ import Monitora_Habitos.Entities.User;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
     
-    Page<User> findUserByName(String name, Pageable pageable);
+    Page<User> findUserByNameContainingIgnoreCase(String name, Pageable pageable);
 }

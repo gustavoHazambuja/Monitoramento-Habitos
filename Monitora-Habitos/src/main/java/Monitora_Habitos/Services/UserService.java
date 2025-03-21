@@ -39,7 +39,7 @@ public class UserService {
     @Transactional(readOnly = true)
     public Page<User> findUserByName(String name, Pageable pageable){
 
-        Page<User> result = userRepository.findUserByName(name, pageable);
+        Page<User> result = userRepository.findUserByNameContainingIgnoreCase(name, pageable);
 
         return result;
     }

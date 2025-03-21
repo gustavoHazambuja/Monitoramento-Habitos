@@ -10,5 +10,5 @@ import Monitora_Habitos.Entities.Habit;
 
 public interface HabitRepository extends JpaRepository<Habit, UUID> {
     
-    Page<Habit> findHabitByName(String name, Pageable pageable);
+    Page<Habit> findHabitByNameContainingIgnoreCase(String name, Pageable pageable);
 }
